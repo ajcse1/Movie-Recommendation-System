@@ -67,7 +67,7 @@ moviePairs = uniqueJoinedRatings.map(makePairs)
 moviePairRatings = moviePairs.groupByKey()
 
 # We now have (movie1, movie2) = > (rating1, rating2), (rating1, rating2) ...
-# Can now compute similarities.
+# Can now compute the similarities.
 moviePairSimilarities = moviePairRatings.mapValues(computeCosineSimilarity).cache()
 
 # Save the results if desired

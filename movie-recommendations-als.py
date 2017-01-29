@@ -20,7 +20,7 @@ data = sc.textFile("file:///SparkCourse/ml-100k/u.data")
 
 ratings = data.map(lambda l: l.split()).map(lambda l: Rating(int(l[0]), int(l[1]), float(l[2]))).cache()
 
-# Build the recommendation model using Alternating Least Squares
+# Build the recommendation model using Alternating Least Squares(ALS)
 print "\nTraining recommendation model..."
 rank = 10
 numIterations = 20

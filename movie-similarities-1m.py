@@ -69,7 +69,7 @@ uniqueJoinedRatings = joinedRatings.filter(filterDuplicates)
 moviePairs = uniqueJoinedRatings.map(makePairs).partitionBy(100)
 
 # We now have (movie1, movie2) => (rating1, rating2)
-# Now collect all ratings for each movie pair and compute similarity
+# Now collect all the ratings for each movie pair and compute similarity
 moviePairRatings = moviePairs.groupByKey()
 
 # We now have (movie1, movie2) = > (rating1, rating2), (rating1, rating2) ...

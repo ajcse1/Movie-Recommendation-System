@@ -9,6 +9,7 @@ def loadMovieNames():
     return movieNames
 
 conf = SparkConf().setMaster("local").setAppName("PopularMovies")
+
 sc = SparkContext(conf = conf)
 
 nameDict = sc.broadcast(loadMovieNames())
